@@ -1,0 +1,30 @@
+{
+  "name": "to-do-list",
+  "version": "1.0.0",
+  "description": "Javascript single page to-do-list application with no additional frameworks/libraries",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kennbarr/to-do-list.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kennbarr/to-do-list/issues"
+  },
+  "homepage": "https://github.com/kennbarr/to-do-list#readme",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "http-server": "^0.9.0",
+    "mocha": "^2.5.3"
+  },
+  "devDependencies": {
+    "zombie": "^4.2.1"
+  }
+}
