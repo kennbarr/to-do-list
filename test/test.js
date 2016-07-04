@@ -1,5 +1,6 @@
 var path = require('path');
-var expect = require('chai');
+var chai = require('chai');
+var expect = chai.expect;
 
 const Browser = require('zombie');
 const http = require('http');
@@ -22,7 +23,7 @@ describe('Page Load', function() {
   });
 
   it("has content", function(){
-    expect(this.browser).to.contain('TO DO List');
+    expect(this.browser.text('html')).to.include('TO DO List');
   });
 
 
