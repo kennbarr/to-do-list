@@ -22,10 +22,10 @@ describe('Page Load', function() {
     this.browser.assert.success();
   });
 
-  it("has content", function(){
-    expect(this.browser.text('html')).to.include('TO DO List');
+  it("lists TO DO tasks", function(){
+    expect(this.browser.text('html')).to.include('ITEM 1');
+    expect(this.browser.text('html')).to.include('ITEM 2');
+
   });
-
-
 
 });
