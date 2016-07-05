@@ -14,7 +14,7 @@ describe('Page Load', function() {
     server.listen(3000);
   });
 
-  before(function(done) {
+  beforeEach(function(done) {
     this.browser.visit('/', done);
   });
 
@@ -32,6 +32,29 @@ describe('Page Load', function() {
     addTask(this.browser);
     this.browser.pressButton('Completed');
     expect(this.browser.html('#list-container')).to.include("completed-task");
+  });
+
+  it('can filter out completed tasks', function() {
+    addTask(this.browser);
+    this.browser.pressButton('Completed');
+    this.browser.pressButton('show-outstanding')
+    expect(this.browser.html('#list-container')).to.include("hidden-task");
+  });
+
+  it('can filter out uncompleted tasks', function() {
+    addTask(this.browser);
+    this.browser.pressButton('show-completed')
+    expect(this.browser.html('#list-container')).to.include("hidden-task");
+  });
+
+  it('shows all tasks', function() {
+    addTask(this.browser);
+    this.browser.pressButton('Completed');
+    this.browser.pressButton('show-outstanding')
+    addTask(this.browser);
+    this.browser.pressButton('show-completed')
+    this.browser.pressButton('show-all')
+    expect(this.browser.html('#list-container')).to.not.include("hidden-task");
   });
 
 });
