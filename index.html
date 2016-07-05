@@ -4,37 +4,37 @@
 <head>
 
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="lib/interface.js"></script>
 
 </head>
 
 <body>
 
-  <div class='dos-container'>
+  <div id='main-wrapper'>
     <div class='title'>TO DO List</div>
-    <div class='input-container'>
-      <textarea placeholder='Please Enter Your New ToDo Item' rows=3 cols=50 ></textarea>
+    <div id='input-container'>
+      <textarea id="new-task-input-text" placeholder='Please Enter Your New ToDo Item' name="new-task-input" rows=3 cols=50 ></textarea>
       <br>
-      <input type='submit' />
+      <input id="new-task-submit-button" type='submit' name='submit' />
     </div>
 
-    <div class='list-container'>
+    <ul id='list-container'>
 
-
-
-      <div class='list-item'><div class='list-item-text'>ITEM 1</div>
+      <li>
+        <div class='list-item-text'>ITEM 1</div>
         <div class='list-item-menu'>
           <input type='submit' value='Delete' />
         </div>
-      </div>
+      </li>
 
-      <div class='list-item'><div class='list-item-text'>ITEM 2</div>
+      <li>
+        <div class='list-item-text'>ITEM 2</div>
         <div class='list-item-menu'>
           <input type='submit' value='Delete' />
         </div>
-      </div>
+      </li>
 
-    
-    </div>
+    </ul>
 
   </div>
 

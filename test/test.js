@@ -25,7 +25,13 @@ describe('Page Load', function() {
   it("lists TO DO tasks", function(){
     expect(this.browser.text('html')).to.include('ITEM 1');
     expect(this.browser.text('html')).to.include('ITEM 2');
+  });
 
+  it("can add a task to to-do list", function(){
+    this.browser
+      .fill('new-task-input', 'New task')
+      .pressButton('submit');
+    expect(this.browser.text('html')).to.include('New task');
   });
 
 });
