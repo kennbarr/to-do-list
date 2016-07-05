@@ -22,16 +22,23 @@ describe('Page Load', function() {
     this.browser.assert.success();
   });
 
-  it("lists TO DO tasks", function(){
-    expect(this.browser.text('html')).to.include('ITEM 1');
-    expect(this.browser.text('html')).to.include('ITEM 2');
-  });
 
   it("can add a task to to-do list", function(){
-    this.browser
-      .fill('new-task-input', 'New task')
-      .pressButton('submit');
+    addTask(this.browser);
     expect(this.browser.text('html')).to.include('New task');
   });
 
+  it("can mark a task as completed", function(){
+    addTask(this.browser);
+    this.browser.pressButton('Completed');
+    expect(this.browser.html('#list-container')).to.include("<li class='completed-task'");
+  });
+
 });
+
+
+var addTask = function(browser){
+  browser
+  .fill('new-task-input', 'New task')
+  .pressButton('submit');
+};

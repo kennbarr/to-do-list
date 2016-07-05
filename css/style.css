@@ -16,15 +16,20 @@
   min-height: 600px;
   width: 70%;
 }
+#input-container {
+  text-align: center;
+}
+
+.completed-task {
+  text-decoration:line-through;
+}
+
 .title {
   background-color: #fff;
   text-align: center;
   margin: 10px 10px 50;
   font-size: 20;
 
-}
-#input-container {
-  text-align: center;
 }
 .list-item-menu {
   float: right;
