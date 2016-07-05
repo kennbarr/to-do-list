@@ -31,7 +31,7 @@ describe('Page Load', function() {
   it("can mark a task as completed", function(){
     addTask(this.browser);
     this.browser.pressButton('Completed');
-    expect(this.browser.html('#list-container')).to.include("<li class='completed-task'");
+    expect(this.browser.html('#list-container')).to.include("completed-task");
   });
 
 });
