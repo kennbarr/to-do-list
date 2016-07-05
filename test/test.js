@@ -14,7 +14,7 @@ describe('Page Load', function() {
     server.listen(3000);
   });
 
-  before(function(done) {
+  beforeEach(function(done) {
     this.browser.visit('/', done);
   });
 
