@@ -33,7 +33,13 @@ describe('Page Load', function() {
     this.browser.pressButton('Completed');
     expect(this.browser.html('#list-container')).to.include("completed-task");
   });
-
+  
+  it('can filter out completed tasks', function() {
+    addTask(this.browser);
+    this.browser.pressButton('Completed');
+    this.browser.pressButton('show-outstanding')
+    expect(this.browser.html('#list-container')).to.include("hidden-task");
+  });
 });
 
 
