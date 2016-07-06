@@ -13,14 +13,14 @@ describe('Page Load', function() {
     var server = createServer({ root: path.join(__dirname, "../") });
     server.listen(3000);
   });
-  
+
 
   describe('Task Functionality', function() {
     beforeEach(function(done) {
       this.browser.visit('/?json=test', done);
     });
-    
-    
+
+
     it("page exists", function(){
       this.browser.assert.success();
     });
@@ -65,14 +65,13 @@ describe('Page Load', function() {
     beforeEach(function(done) {
       this.browser.visit('/', done);
     });
-    
+
     it('retrieves Marys stuff by default', function() {
       expect(this.browser.html('#list-container')).to.include("Go to the bank");
-      expect(this.broswer.html('#task-0')).to.include('active-task');
+      expect(this.browser.html('#task-0')).to.include('active-task');
     });
 
   });
-
 
 });
 
